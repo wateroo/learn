@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.watero.mapper.UserInfoMapper">
+
+    <resultMap id="userInfoResultMap" type="com.watero.entity.UserInfo">
+        <id column="acct_id" property="acctId" javaType="String" jdbcType="VARCHAR"></id>
+        <result column="acct_name" property="acctName" javaType="String" jdbcType="VARCHAR"></result>
+        <result column="nick_name" property="nickName" javaType="String" jdbcType="VARCHAR"></result>
+        <result column="password" property="password" javaType="String" jdbcType="VARCHAR"></result>
+        <result column="create_time" property="createTime" javaType="Date" jdbcType="TIMESTAMP"></result>
+        <result column="last_update_time" property="lastUpdateTime" javaType="Date" jdbcType="TIMESTAMP"></result>
+        <result column="vip" property="vip" javaType="Boolean" jdbcType="TINYINT"></result>
+    </resultMap>
+
+    <sql id="commonSql1">
+        (acct_id,acct_name,nick_name,password,create_time,last_update_time,vip)
+    </sql>
+
+    <sql id="commonSql2">
+        (#{acctId},#{acctName},#{nickName},#{password},#{createTime},#{lastUpdateTime},#{vip})
+    </sql>
+
+
+    <select id="selectUserInfoById" resultMap="userInfoResultMap">
+      select * from t_user_info where acct_id = #{acctId}
+  </select>
+
+    <insert id="insertUserInfo" useGeneratedKeys="true"  keyProperty="acctId" parameterType="userInfo">
+        insert into t_user_info
+        <include refid="commonSql1"></include>
+        values
+        <include refid="commonSql2"></include>
+    </insert>
+</mapper>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.watero.mapper.OrderInfoMapper">
+
+    <sql id="commonSql2">
+         id,createTime,userId,goodId,addressId,updateTime;
+    </sql>
+
+    <insert id="insertOrderInfo" useGeneratedKeys="true" keyColumn="id" keyProperty="id"
+            parameterType="com.watero.entity.OrderInfo">
+        insert  into t_order_info (id,create_time,user_id,good_id,address_id,update_time)
+        values (#{id},#{createTime},#{userId},#{goodId},#{addressId},#{updateTime})
+    </insert>
+</mapper>
