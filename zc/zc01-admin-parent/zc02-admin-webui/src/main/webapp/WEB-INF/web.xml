@@ -80,10 +80,17 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
-	<jsp-config>
-		<jsp-property-group>
-			<url-pattern>*.jsp</url-pattern>
-			<el-ignored>false</el-ignored>
-		</jsp-property-group>
-	</jsp-config>
+<!-- 	<jsp-config> -->
+<!-- 		<jsp-property-group> -->
+<!-- 			<url-pattern>*.jsp</url-pattern> -->
+<!-- 			<el-ignored>false</el-ignored> -->
+<!-- 		</jsp-property-group> -->
+<!-- 	</jsp-config> -->
+
+<!-- 	<servlet-mapping> -->
+<!-- 		<servlet-name>default</servlet-name> -->
+<!-- 		<url-pattern>*.js</url-pattern> -->
+<!-- 		<url-pattern>*.css</url-pattern> -->
+<!-- 		<url-pattern>/resources/*</url-pattern> -->
+<!-- 	</servlet-mapping> -->
 </web-app>

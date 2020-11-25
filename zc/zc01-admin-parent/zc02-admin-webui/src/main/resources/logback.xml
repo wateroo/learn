@@ -37,12 +37,10 @@
 		</encoder>
 	</appender>
 
-	<!-- 文件保存日志的相关配置 -->
-	<appender name="FILE"
-		class="ch.qos.logback.core.rolling.RollingFileAppender">
+	<!-- 文件保存日志的相关配置 --> 
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<!-- 保存日志文件的路径 -->
 		<file>${logPath}/${appName}.log</file>
-
 		<!-- 日志格式 -->
 		<encoder>
 			<pattern>${logPattern}</pattern>
@@ -52,7 +50,6 @@
 			<onMatch>ACCEPT</onMatch>
 			<onMismatch>DENY</onMismatch>
 		</filter>
-
 		<!-- 循环政策：基于时间创建日志文件 -->
 		<rollingPolicy
 			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
@@ -70,6 +67,6 @@
 	<root level="${logLevel}">
 		<appender-ref ref="STDOUT" />
 		<!-- 开发可以只要控制台就OK -->
-		<!-- <appender-ref ref="FILE" /> -->
+		<appender-ref ref="FILE" /> 
 	</root>
 </configuration>

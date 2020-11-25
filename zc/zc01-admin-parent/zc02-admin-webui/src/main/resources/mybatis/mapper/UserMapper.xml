@@ -3,7 +3,7 @@
 <mapper namespace="com.watero.mapper.UserMapper">
   <resultMap id="BaseResultMap" type="com.watero.entity.User">
     <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="acct_name" jdbcType="VARCHAR" property="acct_name" />
     <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
     <result column="create_time" jdbcType="DATE" property="createTime" />
   </resultMap>

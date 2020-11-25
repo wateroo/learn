@@ -3,49 +3,81 @@ package com.watero.entity;
 import java.util.Date;
 
 public class User {
-	private Long id;
+    private String acctId;
 
-	private String name;
+    private Long id;
 
-	private String nickName;
+    private String acctName;
 
-	private Date createTime;
+    private String nickName;
 
-	public Long getId() {
-		return id;
-	}
+    private Date createDate;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    private Date lastUpdateDate;
 
-	public String getName() {
-		return name;
-	}
+    private String password;
 
-	public void setName(String name) {
-		this.name = name == null ? null : name.trim();
-	}
+    public String getAcctId() {
+        return acctId;
+    }
+    
 
-	public String getNickName() {
-		return nickName;
-	}
-
-	public void setNickName(String nickName) {
-		this.nickName = nickName == null ? null : nickName.trim();
-	}
-
-	public Date getCreateTime() {
-		return createTime;
-	}
-
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
-
-	@Override
+    @Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", nickName=" + nickName + ", createTime=" + createTime + "]";
+		return "User [acctId=" + acctId + ", id=" + id + ", acctName=" + acctName + ", nickName=" + nickName
+				+ ", createDate=" + createDate + ", lastUpdateDate=" + lastUpdateDate + ", password=" + password + "]";
 	}
 
+
+	public void setAcctId(String acctId) {
+        this.acctId = acctId == null ? null : acctId.trim();
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getAcctName() {
+        return acctName;
+    }
+
+    public void setAcctName(String acctName) {
+        this.acctName = acctName == null ? null : acctName.trim();
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName == null ? null : nickName.trim();
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
+
+    public Date getLastUpdateDate() {
+        return lastUpdateDate;
+    }
+
+    public void setLastUpdateDate(Date lastUpdateDate) {
+        this.lastUpdateDate = lastUpdateDate;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password == null ? null : password.trim();
+    }
 }
