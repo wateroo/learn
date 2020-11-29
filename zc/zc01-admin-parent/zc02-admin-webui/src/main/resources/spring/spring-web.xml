@@ -51,18 +51,18 @@
 	<mvc:view-controller path="/main.html" view-name="admin/admin-main"/>
 	
 	<!--配置拦截器-->
-<!--     <mvc:interceptors> -->
-<!--         <mvc:interceptor> -->
-<!--         	<mvc:mapping path="/**"/> -->
-<!--         	<mvc:exclude-mapping path="/"/> -->
-<!--         	<mvc:exclude-mapping path="/index.html"/> -->
-<!--         	<mvc:exclude-mapping path="/index.jsp"/> -->
-<!--         	<mvc:exclude-mapping path="/admin/login"/> -->
-<!--         	<mvc:exclude-mapping path="/admin/logout"/> -->
-<!--         	<mvc:exclude-mapping path="/index.html"/> -->
-<!--         	<bean class="com.watero.intercepter.LoginIntercepter" />   -->
-<!--         </mvc:interceptor> -->
-<!-- 	</mvc:interceptors> -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+        	<mvc:mapping path="/**"/>
+        	<mvc:exclude-mapping path="/"/>
+        	<mvc:exclude-mapping path="/index.html"/>
+        	<mvc:exclude-mapping path="/index.jsp"/>
+        	<mvc:exclude-mapping path="/admin/login"/>
+        	<mvc:exclude-mapping path="/admin/logout"/>
+        	<mvc:exclude-mapping path="/index.html"/>
+        	<bean class="com.watero.intercepter.LoginIntercepter" />  
+        </mvc:interceptor>
+	</mvc:interceptors>
 
 	<!-- 基于XML的异常映射 -->
 	<bean id="simpleMappingExceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">

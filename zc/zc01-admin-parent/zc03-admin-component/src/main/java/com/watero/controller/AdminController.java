@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.github.pagehelper.PageInfo;
 import com.watero.entity.User;
 import com.watero.service.AdminService;
+import com.watero.util.CommonConfigConstant;
 
 import cn.hutool.crypto.SecureUtil;
 
@@ -44,14 +45,14 @@ public class AdminController {
 
 		User user = adminService.queryUserByAcctId(loginAcct, userPswd);
 		HttpSession session = request.getSession();
-		session.setAttribute("user", user);
+		session.setAttribute(CommonConfigConstant.ATTR_LOGIN_USER, user);
 
 		return "redirect:/main.html";
 	}
 
 	@GetMapping("/logout")
 	public String logout(HttpServletRequest request) {
-		logger.info("注销用户 ：{}", request.getSession().getAttribute("user"));
+		logger.info("注销用户 ：{}", request.getSession().getAttribute(CommonConfigConstant.ATTR_LOGIN_USER));
 		if (request.getSession() != null) {
 			request.getSession().invalidate();
 		}

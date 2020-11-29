@@ -9,6 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.watero.entity.User;
 import com.watero.exception.AccessForbiddenException;
+import com.watero.util.CommonConfigConstant;
 
 /**
  * 登录拦截器
@@ -21,7 +22,7 @@ public class LoginIntercepter implements HandlerInterceptor {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		HttpSession session = request.getSession();
-		User user = (User) session.getAttribute("user");
+		User user = (User) session.getAttribute(CommonConfigConstant.ATTR_LOGIN_USER);
 		if (user == null) {
 			throw new AccessForbiddenException("访问拒绝,请先登录 !");
 		}
