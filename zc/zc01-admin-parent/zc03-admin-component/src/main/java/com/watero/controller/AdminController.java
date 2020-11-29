@@ -65,13 +65,12 @@ public class AdminController {
 			@RequestParam(value = "pageSize", defaultValue = "10") int pageSize, Model model) {
 		PageInfo<User> userListPageInfo = adminService.getUserListPageInfo(user, pageNum, pageSize);
 		model.addAttribute("pageInfo", userListPageInfo);
-		return "";
+		return "admin/user/list";
 	}
 
 	@GetMapping(value = "/user/list1")
 	@ResponseBody
-	public PageInfo<User> userList1(User user,
-			@RequestParam(value = "pageNum", defaultValue = "1") int pageNum,
+	public PageInfo<User> userList1(User user, @RequestParam(value = "pageNum", defaultValue = "1") int pageNum,
 			@RequestParam(value = "pageSize", defaultValue = "10") int pageSize, Model model) {
 		PageInfo<User> userListPageInfo = adminService.getUserListPageInfo(user, pageNum, pageSize);
 		return userListPageInfo;

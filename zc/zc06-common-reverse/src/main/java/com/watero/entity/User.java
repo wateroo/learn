@@ -3,13 +3,27 @@ package com.watero.entity;
 import java.util.Date;
 
 public class User {
+    private String acctId;
+
     private Long id;
 
-    private String name;
+    private String acctName;
 
     private String nickName;
 
-    private Date createTime;
+    private Date createDate;
+
+    private Date lastUpdateDate;
+
+    private String password;
+
+    public String getAcctId() {
+        return acctId;
+    }
+
+    public void setAcctId(String acctId) {
+        this.acctId = acctId == null ? null : acctId.trim();
+    }
 
     public Long getId() {
         return id;
@@ -19,12 +33,12 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getAcctName() {
+        return acctName;
     }
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+    public void setAcctName(String acctName) {
+        this.acctName = acctName == null ? null : acctName.trim();
     }
 
     public String getNickName() {
@@ -35,11 +49,27 @@ public class User {
         this.nickName = nickName == null ? null : nickName.trim();
     }
 
-    public Date getCreateTime() {
-        return createTime;
+    public Date getCreateDate() {
+        return createDate;
     }
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
+
+    public Date getLastUpdateDate() {
+        return lastUpdateDate;
+    }
+
+    public void setLastUpdateDate(Date lastUpdateDate) {
+        this.lastUpdateDate = lastUpdateDate;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password == null ? null : password.trim();
     }
 }
